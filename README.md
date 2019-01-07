@@ -5,8 +5,8 @@ This application allows teams to view how frequently pairs work together based o
 ```
 git commit -m "This is an example of how to format your commits
 
-Co-authored-by: driver <driver@homedepot.com>
-Co-authored-by: navigator <navigator@homedepot.com>"
+Co-authored-by: driver-ldap <driver@homedepot.com>
+Co-authored-by: navigator-ldap <navigator@homedepot.com>"
 ```
 
 ### Configuration
@@ -19,7 +19,8 @@ Create a `config.json` file in the root project directory that is formatted as b
   "token": "GITHUB TOKEN",
   "repos": [
     "Org/Repo",
-    "User/Repo2"
+    "User/Repo2",
+    ...,
   ]
 }
 ```

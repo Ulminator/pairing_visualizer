@@ -6,10 +6,8 @@ $(document).ready(function () {
         hideMatrix();
         showLoader();
         $.get('/api/github/' + days + "?cache_enabled=" + isCachingEnabled()).done(function (data) {
-            console.log(data);
             pairingData = data
             // pairingData = JSON.parse(data);
-            console.log(pairingData);
             playground.load(pairingData);
             hideLoader();
             showMatrix();
