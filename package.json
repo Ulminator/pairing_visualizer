@@ -14,7 +14,7 @@
     "url": "https://github.homedepot.com/mxu4axr/pairing_visualizer.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "mxu4axr <matthew_ulmer1@homedepot.com>",
   "license": "ISC",
   "dependencies": {
     "@octokit/rest": "^16.3.2",
