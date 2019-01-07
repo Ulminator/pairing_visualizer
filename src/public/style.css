@@ -1,0 +1,111 @@
+.row-fluid [class*="span"] {
+    margin-left: 1%;
+}
+
+body {
+    padding: 10px;
+}
+
+.navbar {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 5000px;
+    resize: vertical;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+textarea#pairing_text {
+    width: 2000px;
+}
+
+.input-log {
+    overflow-x: hidden;
+}
+
+#regex {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#go {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px;
+    margin-top: 10px;
+}
+
+.visualize_matrix_container {
+    text-align: center;
+}
+
+.viz_container {
+    text-align: center;
+    float: right;
+}
+
+.info {
+    text-align: center;
+}
+
+.authors_container {
+    display: none;
+    float: left;
+}
+
+.authors {
+    margin-top: 20px;
+    margin-left: 23px;
+}
+
+svg {
+    height: 700px;
+    width: 815px;
+}
+
+.player {
+    cursor: pointer;
+    r: 20px;
+    fill-opacity: 0.75;
+    stroke: #EE1031;
+    stroke-opacity: 0.75;
+    z-index: 10;
+}
+
+.playerLarge {
+    cursor: pointer;
+    r: 25px;
+    fill: red;
+    fill-opacity: 0.75;
+    stroke: blue;
+    stroke-opacity: 0.75;
+    z-index: 10;
+}
+
+.player_names {
+    pointer-events: none;
+}
+
+.input-container {
+    height: 300px;
+    overflow: scroll;
+}
+
+.connect {
+    fill: none;
+    stroke: #DD1031;
+    stroke-opacity: 0.75;
+}
+
+.connectLarge {
+    fill: none;
+    stroke: black;
+    stroke-opacity: 0.75;
+}
