@@ -25,6 +25,13 @@ Create a `config.json` file in the root project directory that is formatted as b
 }
 ```
 
+## Starting the Application
+
+```
+npm i
+npm start
+```
+
 ## Git Mob
 
 This is a tool that helps automate appending the `Co-authored-by` section at the end of commit messages. The repo for reference is `https://github.com/findmypast-oss/git-mob`.
@@ -58,13 +65,7 @@ npm i -g git-mob
 }
 ```
 
-3. Navigate to the repository you want to integrate with git-mob and install the template that will be used to hold the Co-authored-by section within it.
-
-```
-git mob --installTemplate
-```
-
-4. Navigate to the `./.git/hooks` directory and create a `prepare-commit-msg` with the following code:
+3. Create a `~/githooks` directory and create `~/githooks/prepare-commit-msg` file with the following content:
 
 ```
 #!/usr/bin/env node
@@ -94,11 +95,18 @@ if(/COMMIT_EDITMSG/g.test(commitMessage)){
 }
 ```
 
-5. Grant that file executable permissions.
-
+4. Make that file executable and integrate it with git. This will make it to where that file is run after each commit. However, nothing will be appended to the commit if the next step is not performed in each repository that you wish to integrate with git-mob.
 
 ```
-chmod +x prepare-commit-msg
+chmod +x ~/githooks/prepare-commit-msg
+
+git config --global core.hooksPath ~/githooks
+```
+
+5. Navigate to the repository you want to integrate with git-mob and install the template that will be used to hold the Co-authored-by section within it.
+
+```
+git mob --installTemplate
 ```
 
 ### Using Git Mob
@@ -109,7 +117,9 @@ chmod +x prepare-commit-msg
 
 ### Deactivating Git Mob
 
-1. Run `git solo`
+```
+git solo
+```
 
 ### Removing Git Mob
 
@@ -119,4 +129,14 @@ chmod +x prepare-commit-msg
 git mob --uninstallTemplate
 ```
 
-2. Remove the prepare-commit-msg file
+2. Remove the `~/githooks` directory and its content.
+
+```
+rm -rf ~/githooks
+```
+
+3. Unset the global hooks path.
+
+```
+git config --global --unset core.hooksPath
+```
